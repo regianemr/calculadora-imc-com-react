@@ -1,5 +1,7 @@
 import "./ImcCalc.css"
-const imcCalc = () => {
+import Button from "./Button";
+
+const ImcCalc = () => {
   return (
     <div id="calc-container">
       <h2>Calculadora de IMC</h2>
@@ -21,13 +23,12 @@ const imcCalc = () => {
           </div>
         </div>
         <div className="action-control">
-          <button>Calcular</button>
-          <button>Limpar</button>
-
+          <Button id="calc-btn" text="Calcular" />
+          <Button id="clear-btn" text="Limpar" />
         </div>
       </form>
     </div>
   )
 }
 
-export default imcCalc
+export default ImcCalc;
