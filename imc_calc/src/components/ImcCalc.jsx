@@ -14,6 +14,20 @@ const ImcCalc = () => {
     setWeight("")
   }
 
+  const validDigits = (text) => {
+    return text.replace(/[^0-9,]/g, "")
+  }
+
+  const handleHeightChange = (e) => {
+    const updatedValue = validDigits(e.target.value)
+    setHeight(updatedValue)
+  }
+
+  const handleWeightChange = (e) => {
+    const updatedValue = validDigits(e.target.value)
+    setWeight(updatedValue)
+  }
+
 
   return (
     <div id="calc-container">
@@ -26,7 +40,7 @@ const ImcCalc = () => {
             name="height" 
             id="height" 
             placeholder="Exemplo 1,65" 
-            onChange={(e) => setHeight(e.target.value)} // VALOR PARA ALTURA DO USUÁRIO //
+            onChange={(e) => handleHeightChange(e)} // VALOR PARA ALTURA DO USUÁRIO //
             value={height}
             />
           </div>
@@ -36,7 +50,7 @@ const ImcCalc = () => {
             name="weight" 
             id="weight" 
             placeholder="Exemplo 60,5" 
-            onChange={(e) => setWeight(e.target.value)} // VALOR PARA PESO DO USUÁRIO //
+            onChange={(e) => handleWeightChange(e)} // VALOR PARA PESO DO USUÁRIO //
             value={weight}
             />
           </div>
